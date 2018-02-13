@@ -1,0 +1,20 @@
+{
+  "name": "node-express-static-webserver-with-okta-auth",
+  "description": "Node Express Web Server for Static Website with Okta Authentication",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isu-it/node-express-static-webserver-with-okta-auth.git"
+  },
+  "bugs": "https://github.com/isu-it/node-express-static-webserver-with-okta-auth/issues",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/isu-it/node-express-static-webserver-with-okta-auth",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@okta/oidc-middleware": "0.0.15",
+    "express": "^4.14.0",
+    "express-session": "^1.15.6"
+  }
+}
