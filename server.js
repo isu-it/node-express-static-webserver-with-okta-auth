@@ -7,7 +7,7 @@ const oidc = new ExpressOIDC({
 issuer: config.webServer.oidc.issuer,
 client_id: config.webServer.oidc.clientId,
 client_secret: config.webServer.oidc.clientSecret,
-redirect_uri: config.webServer.oidc.redirectUri,
+appBaseUrl: config.webServer.oidc.appBaseUrl,
 scope: config.webServer.oidc.scope
 });
 
@@ -25,12 +25,12 @@ app.use(oidc.router);
 
 // Check if authenticated
 app.use(function (req, res, next) {
-  if (!req.userinfo) {
-    // get authentication from Okta
-    res.redirect('/login');  
-  } else {
+  if (req.isAuthenticated()) {
     // already authenticated, keep going
     next()
+  } else {
+    // get authentication from Okta
+    res.redirect('/login');  
   }
 })
 

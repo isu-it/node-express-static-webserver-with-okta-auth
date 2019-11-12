@@ -1,0 +1,12 @@
+{
+  "webServer": {
+    "port": 8080,
+    "oidc": {
+      "clientId": "######",
+      "clientSecret": "######",
+      "issuer": "https://dev-######.oktapreview.com/oauth2/default",
+      "appBaseUrl": "http://localhost:8080",
+      "scope": "openid profile email"
+    }
+  }
+}
